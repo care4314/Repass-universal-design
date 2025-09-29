@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rocky Mountain National Park — Semantic HTML5 Recode</title>
+  <meta name="description" content="A semantic HTML5 recode of the Rocky Mountain National Park Wikipedia article with accessible navigation and section anchors." />
+  <style>
+    :root {
+      --maxw: 72rem;
+      --accent: #0b6;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; color: #222; }
+    header { background: #f3fbf7; border-bottom: 1px solid #dfeee7; }
+    header .wrap, main .wrap, footer .wrap { max-width: var(--maxw); margin: 0 auto; padding: 1rem 1rem; }
+    .titlebar { display: grid; gap: .5rem; align-items: center; }
+    .titlebar h1 { margin: 0; font-size: clamp(1.5rem, 2.6vw, 2.2rem); }
+    .lead { margin: .25rem 0 0 0; color: #444; }
+    nav.primary { background: white; border-top: 1px solid #e6efe9; border-bottom: 1px solid #e6efe9; }
+    nav.primary ul { display: flex; flex-wrap: wrap; gap: .5rem 1rem; list-style: none; margin: 0; padding: .75rem 1rem; max-width: var(--maxw); margin-inline: auto; }
+    nav.primary a { text-decoration: none; color: #064; border-bottom: 2px solid transparent; padding-bottom: .2rem; }
+    nav.primary a:focus, nav.primary a:hover { border-color: var(--accent); }
+    .layout { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+    @media (min-width: 960px) { .layout { grid-template-columns: 3fr 1fr; } }
+    article { max-width: 60ch; }
+    article h2 { margin-top: 2.5rem; }
+    article h3 { margin-top: 1.5rem; }
+    figure { margin: 1rem 0; }
+    figure img { max-width: 100%; height: auto; display: block; border-radius: .5rem; }
+    figcaption { font-size: .9rem; color: #555; }
+    aside.facts { position: relative; background: #f8fbff; border: 1px solid #e5eefb; padding: 1rem; border-radius: .75rem; }
+    aside.facts h2 { font-size: 1.1rem; margin-top: 0; }
+    dl { display: grid; grid-template-columns: auto 1fr; gap: .25rem .75rem; }
+    dt { font-weight: 600; color: #333; }
+    dd { margin: 0; }
+    footer { border-top: 1px solid #e6e6e6; background: #fafafa; color: #444; }
+    .small { font-size: .95rem; }
+    a { color: #085; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .sr-only { border: 0; clip: rect(0, 0, 0, 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; white-space: nowrap; width: 1px; }
+    .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { left: 1rem; top: 1rem; width: auto; height: auto; background: #fff; border: 2px solid #000; padding: .5rem .75rem; z-index: 999; }
+    .toc { background: #f7f7f7; border: 1px solid #e5e5e5; padding: 1rem; border-radius: .5rem; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header role="banner">
+    <div class="wrap">
+      <div class="titlebar">
+        <h1>Rocky Mountain National Park</h1>
+      </div>
+    </div>
+  </header>
+
+  <nav class="primary" aria-label="Primary">
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#history">History</a></li>
+      <li><a href="#geography">Geography</a></li>
+      <li><a href="#climate">Climate</a></li>
+      <li><a href="#ecology">Ecology</a></li>
+      <li><a href="#wildlife">Wildlife</a></li>
+      <li><a href="#access">Access & Activities</a></li>
+      <li><a href="#wildfires">Wildfires</a></li>
+      <li><a href="#credits">Attribution</a></li>
+    </ul>
+  </nav>
+
+  <main id="main" role="main">
+    <div class="wrap layout">
+
+      <article aria-labelledby="overview">
+        <section id="overview">
+          <h2>Overview</h2>
+          <p><strong>Rocky Mountain National Park</strong> is a United States national park in north‑central Colorado, about <data value="89">55 miles (89 km)</data> northwest of Denver, situated between <strong>Estes Park</strong> (east) and <strong>Grand Lake</strong> (west). The <strong>Continental Divide</strong> runs through the park; headwaters of the <strong>Colorado River</strong> arise in the park’s northwest. Landscapes range from forest to alpine tundra, with mountains, lakes, and diverse wildlife.</p>
+
+          <figure>
+            <img src="images/rmnp1.jpg" alt="View from Forest Canyon Overlook along Trail Ridge Road showing alpine peaks and valleys." loading="lazy" decoding="async" />
+            <figcaption>Forest Canyon Overlook along Trail Ridge Road.</figcaption>
+          </figure>
+
+          <p>The <strong>Rocky Mountain National Park Act</strong> was signed on <time datetime="1915-01-26">January 26, 1915</time> by President <strong>Woodrow Wilson</strong>. Trail Ridge Road was built largely in the 1930s by the <abbr title="Civilian Conservation Corps">CCC</abbr>. In <time datetime="1976">1976</time> <abbr title="United Nations Educational, Scientific and Cultural Organization">UNESCO</abbr> designated the park a <em>World Biosphere Reserve</em>. In <time datetime="2023">2023</time> the park recorded about <strong>4.1 million</strong> recreational visits; in <time datetime="2019">2019</time> it saw a record <strong>4,678,804</strong> visitors.</p>
+        </section>
+
+        <!-- HISTORY -->
+        <section id="history" aria-labelledby="hist">
+          <h2 id="hist">History</h2>
+          <p>Paleo‑Indians traveled routes near present‑day Trail Ridge Road, followed by the <strong>Ute</strong> and <strong>Arapaho</strong> peoples who hunted and camped in the region. In <time datetime="1820">1820</time> the <strong>Long Expedition</strong> approached via the Platte River; <strong>Longs Peak</strong> bears Stephen H. Long’s name. By <time datetime="1878">1878</time> settler encroachment had displaced Native Americans.</p>
+          <p>Mining settlements such as <strong>Lulu City</strong>, <strong>Dutchtown</strong>, and <strong>Gaskill</strong> sprang up in the <strong>Never Summer Mountains</strong> in the 1870s but were abandoned by <time datetime="1883">1883</time>. The railroad reached <strong>Lyons</strong> in <time datetime="1881">1881</time>; the <strong>Big Thompson Canyon Road</strong> (now U.S. 34) opened in <time datetime="1904">1904</time>. Road building culminated with <strong>Trail Ridge Road</strong> to Fall River Pass (<time datetime="1929">1929</time>–<time datetime="1932">1932</time>) and on to Grand Lake by <time datetime="1938">1938</time>. Advocates including <strong>Enos Mills</strong>, <strong>James Grafton Rogers</strong>, and <strong>J. Horace McFarland</strong> led to the park’s establishment on <time datetime="1915-01-26">January 26, 1915</time>.</p>
+        </section>
+
+        <!-- GEOGRAPHY -->
+        <section id="geography" aria-labelledby="geo">
+          <h2 id="geo">Geography</h2>
+          <p>RMNP encompasses <strong>265,461 acres</strong> (414.78 sq mi; 1,074.28 km²) with an additional <strong>253,059 acres</strong> (395.40 sq mi; 1,024.09 km²) of adjacent U.S. Forest Service wilderness. The Continental Divide generally trends north–south, sending western waters to the <strong>Pacific</strong> and eastern waters to the <strong>Atlantic</strong>. A horseshoe bend in the Divide within the <strong>Never Summer Mountains</strong> produces unusual drainage patterns.</p>
+          <p>The park contains roughly <strong>450 miles</strong> of rivers/streams, <strong>350 miles</strong> of trails, and about <strong>150 lakes</strong>. Elevations range from <strong>7,860 ft</strong> to <strong>14,259 ft</strong> (Longs Peak). Over sixty peaks exceed 12,000 ft; the <strong>Mummy Range</strong> includes several thirteeners. Small glaciers and permanent snowfields persist in cirques.</p>
+
+          <figure>
+            <img src="images/rmnp2.JPG" alt="View from Many Parks Curve showing meadows and mountain ranges." loading="lazy" decoding="async" />
+            <figcaption>Many Parks Curve on Trail Ridge Road.</figcaption>
+          </figure>
+        </section>
+
+        <!-- CLIMATE -->
+        <section id="climate" aria-labelledby="clim">
+          <h2 id="clim">Climate</h2>
+          <p>According to Köppen, RMNP has a <strong>subarctic (Dfc)</strong> climate with cool summers and year‑round precipitation, shaped by elevation, slope, exposure, and colliding air masses. High elevations receive roughly twice the precipitation of lower zones, largely as snow. Summers at lower elevations are typically in the <strong>70–80 °F</strong> daytime range with cool nights; sudden <strong>afternoon thunderstorms</strong> are common. The <strong>Continental Divide</strong> creates different patterns east (drier, windier) and west (snowier, calmer) of the crest.</p>
+          <p>Long‑term observations indicate rising average temperatures since the early 20th century, earlier snowmelt, drier summers, and longer fire seasons. Warmer winters have aided <strong>mountain pine beetle</strong> survival, increasing tree mortality.</p>
+        </section>
+
+        <!-- ECOLOGY -->
+        <section id="ecology" aria-labelledby="eco">
+          <h2 id="eco">Ecology & Ecosystems</h2>
+          <p>The park spans multiple vegetation types: <em>alpine tundra & barren</em>, <em>western spruce/fir</em>, and <em>pine/Douglas‑fir</em>. The Divide and glacial topography create distinct ecological zones.</p>
+
+          <div class="toc" role="navigation" aria-label="On this page">
+            <strong>Subsections</strong>
+            <ul>
+              <li><a href="#montane">Montane zone</a></li>
+              <li><a href="#subalpine">Subalpine zone</a></li>
+              <li><a href="#alpine">Alpine tundra</a></li>
+              <li><a href="#riparian">Riparian zone</a></li>
+            </ul>
+          </div>
+
+          <section id="montane">
+            <h3>Montane zone</h3>
+            <p>Between roughly <strong>5,600–9,500 ft</strong>, the montane hosts forests, grasslands, and shrublands with meandering rivers and wildflower meadows. South‑facing slopes favor <strong>ponderosa pine</strong>, while north‑facing slopes support denser <strong>Douglas‑fir</strong>, <strong>lodgepole pine</strong>, and spruce. <strong>Quaking aspen</strong> and riparian trees (willow, alder, water birch) line streams. Valleys include <strong>Moraine Park</strong>, <strong>Horseshoe Park</strong>, <strong>Kawuneeche Valley</strong>, and <strong>Upper Beaver Meadows</strong>.</p>
+          </section>
+
+          <section id="subalpine">
+            <h3>Subalpine zone</h3>
+            <p>From about <strong>9,000–11,000 ft</strong>, forests shift to <strong>Engelmann spruce</strong> and <strong>fir</strong>. Near tree line, wind‑sculpted <strong>krummholz</strong> forms dense mats. Past burns often host <strong>lodgepole pine</strong> and <strong>huckleberry</strong>. Lakes such as <strong>Sprague</strong> and <strong>Odessa</strong> dot the landscape.</p>
+          </section>
+
+          <section id="alpine">
+            <h3>Alpine tundra</h3>
+            <p>Above ~<strong>11,000 ft</strong>, severe winds and cold limit growth to hardy perennials and cushion plants with deep taproots and insulating hairs or pigments. Tundra vegetation is fragile; trampling scars can last for decades.</p>
+          </section>
+
+          <section id="riparian">
+            <h3>Riparian zone</h3>
+            <p>Riparian corridors thread all zones, supporting species along the <strong>Colorado</strong>, <strong>Fall</strong>, <strong>Cache la Poudre</strong>, and <strong>Big Thompson</strong> rivers. Microclimate varies with elevation and valley form, shaping plant/animal communities.</p>
+          </section>
+        </section>
+
+        <!-- WILDLIFE -->
+        <section id="wildlife" aria-labelledby="fauna">
+          <h2 id="fauna">Wildlife</h2>
+          <p>RMNP hosts nearly <strong>70 mammals</strong> and <strong>~300 bird species</strong>, with habitats from montane forests to alpine tundra. Some species were extirpated (gray wolf, wolverine, grizzly bear, bison). <strong>Moose</strong>, reintroduced regionally in 1978, are now common, especially on the west side.</p>
+
+          <h3>Elk</h3>
+          <p>Summer populations number roughly <strong>2,000–3,000</strong>, with <strong>800–1,000</strong> wintering in the park. In the absence of wolves, the NPS culls a limited number annually to protect riparian vegetation (fenced exclosures aid willow/aspen recovery).</p>
+
+          <h3>Other ungulates</h3>
+          <p><strong>Bighorn sheep</strong> (~350), <strong>mule deer</strong>, and <strong>moose</strong> are present; bison and pronghorn were eliminated historically.</p>
+
+          <h3>Predators</h3>
+          <p>Predators include <strong>Canada lynx</strong> (rare visitors), <strong>bobcat</strong>, <strong>cougar</strong>, <strong>black bear</strong> (~24–35), <strong>foxes</strong>, and <strong>coyotes</strong>. Cougars primarily hunt mule deer; coyotes hunt rodents and occasionally fawns/calves.</p>
+        </section>
+
+        <!-- ACCESS & ACTIVITIES -->
+        <section id="access" aria-labelledby="acc">
+          <h2 id="acc">Access & Activities</h2>
+          <p>There are <strong>four entrances</strong> (three near Estes Park, one near Grand Lake) and <strong>five visitor centers</strong>. To manage crowding, a <strong>timed‑entry reservation</strong> system operates seasonally (typically <time>May–October</time>).</p>
+          <p><strong>Trail Ridge Road (U.S. 34)</strong> connects east and west; its summit is <strong>12,183 ft</strong>, making it the highest continuously paved U.S. highway. Large sections close in winter due to snow.</p>
+          <p>Popular activities include <strong>hiking</strong> (extensive summer trail network), <strong>fishing</strong> (rainbow, brook, cutthroat, brown trout), <strong>climbing & mountaineering</strong>, <strong>snowshoeing</strong>, and <strong>cross‑country skiing</strong>.</p>
+        </section>
+
+        <!-- WILDFIRES -->
+        <section id="wildfires" aria-labelledby="fires">
+          <h2 id="fires">Wildfires</h2>
+          <p>Historic and recent fires include the <strong>Bear Lake Fire (1900)</strong>, <strong>Ouzel Fire (1978)</strong>, and <strong>Fern Lake Fire (2012)</strong>. Warming trends, earlier snowmelt, and drought contribute to longer, more intense fire seasons. High‑severity burns degrade soils, increase erosion and flood risk, and pollute air and water; by contrast, low‑severity fires can reduce fuel loads, recycle nutrients, and support ecosystem renewal. RMNP employs <strong>prescribed burns</strong> and <strong>fuel management</strong> to balance ecological benefits and risk.</p>
+        </section>
+
+        <!-- CREDITS / ATTRIBUTION -->
+        <section id="credits" aria-labelledby="attrib">
+          <h2 id="attrib">Attribution & Notes</h2>
+          <p>This page is a semantic recode of content summarized from the Wikipedia article <em>“Rocky Mountain National Park.”</em> Text is adapted per <abbr title="Creative Commons Attribution-ShareAlike">CC BY‑SA</abbr> and GFDL requirements. Replace image sources with locally hosted, optimized files you have rights to use and provide proper attributions in the <code>figcaption</code>s.</p>
+          <ul>
+            <li>Original article URL: <a href="https://en.wikipedia.org/wiki/Rocky_Mountain_National_Park">wikipedia.org/wiki/Rocky_Mountain_National_Park</a></li>
+            <li>Validate HTML at the <a href="https://validator.w3.org/nu/" rel="noopener">W3C Nu Validator</a>.</li>
+            <li>Check the document outline with the <a href="https://chrome.google.com/webstore/detail/html5-outliner/" rel="noopener">HTML5 Outliner</a> extension (serve from a web server to avoid local file limitations).</li>
+          </ul>
+        </section>
+      </article>
+
+      <aside class="facts" aria-labelledby="fastfacts">
+        <h2 id="fastfacts">Fast facts</h2>
+        <dl>
+          <dt>Established</dt>
+          <dd><time datetime="1915-01-26">Jan 26, 1915</time> (Woodrow Wilson)</dd>
+          <dt>Area</dt>
+          <dd>265,461 acres (park); 253,059 acres adjacent wilderness</dd>
+          <dt>Highest point</dt>
+          <dd>Longs Peak — 14,259 ft (4,346 m)</dd>
+          <dt>UNESCO</dt>
+          <dd>World Biosphere Reserve (1976)</dd>
+          <dt>Roads</dt>
+          <dd>Trail Ridge Road (summit 12,183 ft)</dd>
+          <dt>Visitors</dt>
+          <dd>~4.1 million (2023); 4.68 million (record, 2019)</dd>
+        </dl>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap small">
+      <p>© <time id="year"></time> RMNP Semantic Recode • Educational use. Replace placeholder images with locally hosted files and proper credits.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
