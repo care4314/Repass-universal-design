@@ -4,44 +4,89 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rocky Mountain National Park — Semantic HTML5 Recode</title>
-  <meta name="description" content="A semantic HTML5 recode of the Rocky Mountain National Park Wikipedia article with accessible navigation and section anchors." />
-  <style>
+    <style>
     :root {
       --maxw: 72rem;
       --accent: #0b6;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; color: #222; }
-    header { background: #f3fbf7; border-bottom: 1px solid #dfeee7; }
-    header .wrap, main .wrap, footer .wrap { max-width: var(--maxw); margin: 0 auto; padding: 1rem 1rem; }
-    .titlebar { display: grid; gap: .5rem; align-items: center; }
-    .titlebar h1 { margin: 0; font-size: clamp(1.5rem, 2.6vw, 2.2rem); }
-    .lead { margin: .25rem 0 0 0; color: #444; }
-    nav.primary { background: white; border-top: 1px solid #e6efe9; border-bottom: 1px solid #e6efe9; }
-    nav.primary ul { display: flex; flex-wrap: wrap; gap: .5rem 1rem; list-style: none; margin: 0; padding: .75rem 1rem; max-width: var(--maxw); margin-inline: auto; }
-    nav.primary a { text-decoration: none; color: #064; border-bottom: 2px solid transparent; padding-bottom: .2rem; }
-    nav.primary a:focus, nav.primary a:hover { border-color: var(--accent); }
-    .layout { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-    @media (min-width: 960px) { .layout { grid-template-columns: 3fr 1fr; } }
-    article { max-width: 60ch; }
-    article h2 { margin-top: 2.5rem; }
-    article h3 { margin-top: 1.5rem; }
-    figure { margin: 1rem 0; }
-    figure img { max-width: 100%; height: auto; display: block; border-radius: .5rem; }
-    figcaption { font-size: .9rem; color: #555; }
-    aside.facts { position: relative; background: #f8fbff; border: 1px solid #e5eefb; padding: 1rem; border-radius: .75rem; }
-    aside.facts h2 { font-size: 1.1rem; margin-top: 0; }
-    dl { display: grid; grid-template-columns: auto 1fr; gap: .25rem .75rem; }
-    dt { font-weight: 600; color: #333; }
-    dd { margin: 0; }
-    footer { border-top: 1px solid #e6e6e6; background: #fafafa; color: #444; }
-    .small { font-size: .95rem; }
-    a { color: #085; }
-    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-    .sr-only { border: 0; clip: rect(0, 0, 0, 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; white-space: nowrap; width: 1px; }
-    .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
-    .skip-link:focus { left: 1rem; top: 1rem; width: auto; height: auto; background: #fff; border: 2px solid #000; padding: .5rem .75rem; z-index: 999; }
-    .toc { background: #f7f7f7; border: 1px solid #e5e5e5; padding: 1rem; border-radius: .5rem; }
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+header {
+  background: #f0f0f0;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1, h2 {
+  margin: 1rem 0;
+}
+
+nav {
+  background: #fff;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #064;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+figure {
+  margin: 1rem 0;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+footer {
+  border-top: 1px solid #ccc;
+  background: #fafafa;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
   </style>
 </head>
 <body>
@@ -181,29 +226,10 @@
           <p>This page is a semantic recode of content summarized from the Wikipedia article <em>“Rocky Mountain National Park.”</em> Text is adapted per <abbr title="Creative Commons Attribution-ShareAlike">CC BY‑SA</abbr> and GFDL requirements. Replace image sources with locally hosted, optimized files you have rights to use and provide proper attributions in the <code>figcaption</code>s.</p>
           <ul>
             <li>Original article URL: <a href="https://en.wikipedia.org/wiki/Rocky_Mountain_National_Park">wikipedia.org/wiki/Rocky_Mountain_National_Park</a></li>
-            <li>Validate HTML at the <a href="https://validator.w3.org/nu/" rel="noopener">W3C Nu Validator</a>.</li>
-            <li>Check the document outline with the <a href="https://chrome.google.com/webstore/detail/html5-outliner/" rel="noopener">HTML5 Outliner</a> extension (serve from a web server to avoid local file limitations).</li>
           </ul>
         </section>
       </article>
 
-      <aside class="facts" aria-labelledby="fastfacts">
-        <h2 id="fastfacts">Fast facts</h2>
-        <dl>
-          <dt>Established</dt>
-          <dd><time datetime="1915-01-26">Jan 26, 1915</time> (Woodrow Wilson)</dd>
-          <dt>Area</dt>
-          <dd>265,461 acres (park); 253,059 acres adjacent wilderness</dd>
-          <dt>Highest point</dt>
-          <dd>Longs Peak — 14,259 ft (4,346 m)</dd>
-          <dt>UNESCO</dt>
-          <dd>World Biosphere Reserve (1976)</dd>
-          <dt>Roads</dt>
-          <dd>Trail Ridge Road (summit 12,183 ft)</dd>
-          <dt>Visitors</dt>
-          <dd>~4.1 million (2023); 4.68 million (record, 2019)</dd>
-        </dl>
-      </aside>
 
     </div>
   </main>
