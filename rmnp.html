@@ -4,89 +4,32 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rocky Mountain National Park — Semantic HTML5 Recode</title>
-    <style>
-    :root {
-      --maxw: 72rem;
-      --accent: #0b6;
-    }
+  <style>
+    :root { --maxw: 72rem; --accent: #0b6; }
     html { scroll-behavior: smooth; }
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  color: #222;
-}
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #222; }
+    header { background: #f0f0f0; padding: 1rem; text-align: center; }
+    h1, h2 { margin: 1rem 0; }
 
-header {
-  background: #f0f0f0;
-  padding: 1rem;
-  text-align: center;
-}
+    nav { background: #fff; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; padding: 0.5rem; text-align: center; }
+    nav ul { list-style: none; margin: 0; padding: 0; }
+    nav ul li { display: inline; margin: 0 1rem; }
+    nav a { text-decoration: none; color: #064; }
+    nav a:hover { text-decoration: underline; }
 
-h1, h2 {
-  margin: 1rem 0;
-}
+    main { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+    figure { margin: 1rem 0; }
+    figure img { max-width: 100%; height: auto; display: block; }
+    figcaption { font-size: 0.9rem; color: #555; text-align: center; }
 
-nav {
-  background: #fff;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  padding: 0.5rem;
-  text-align: center;
-}
+    footer { border-top: 1px solid #ccc; background: #fafafa; text-align: center; padding: 1rem; font-size: 0.9rem; }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 1rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: #064;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-main {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-figure {
-  margin: 1rem 0;
-}
-
-figure img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-figcaption {
-  font-size: 0.9rem;
-  color: #555;
-  text-align: center;
-}
-
-footer {
-  border-top: 1px solid #ccc;
-  background: #fafafa;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
-
+    /* Visually hidden (for outliner + accessibility) */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+    }
   </style>
 </head>
 <body>
@@ -99,6 +42,8 @@ footer {
   </header>
 
   <nav class="primary" aria-label="Primary">
+    <!-- Adds a title so HTML5 Outliner doesn’t show “Untitled NAV” -->
+    <h2 class="sr-only">Navigation</h2>
     <ul>
       <li><a href="#overview">Overview</a></li>
       <li><a href="#history">History</a></li>
@@ -115,10 +60,13 @@ footer {
   <main id="main" role="main">
     <div class="wrap layout">
 
-      <article aria-labelledby="overview">
+      <!-- Give the ARTICLE its own (hidden) heading so the outliner titles it -->
+      <article aria-labelledby="article-heading">
+        <h2 id="article-heading" class="sr-only">Article</h2>
+
         <section id="overview">
           <h2>Overview</h2>
-          <p><strong>Rocky Mountain National Park</strong> is a United States national park in north‑central Colorado, about <data value="89">55 miles (89 km)</data> northwest of Denver, situated between <strong>Estes Park</strong> (east) and <strong>Grand Lake</strong> (west). The <strong>Continental Divide</strong> runs through the park; headwaters of the <strong>Colorado River</strong> arise in the park’s northwest. Landscapes range from forest to alpine tundra, with mountains, lakes, and diverse wildlife.</p>
+          <p><strong>Rocky Mountain National Park</strong> is a United States national park in north-central Colorado, about <data value="89">55 miles (89 km)</data> northwest of Denver, situated between <strong>Estes Park</strong> (east) and <strong>Grand Lake</strong> (west). The <strong>Continental Divide</strong> runs through the park; headwaters of the <strong>Colorado River</strong> arise in the park’s northwest. Landscapes range from forest to alpine tundra, with mountains, lakes, and diverse wildlife.</p>
 
           <figure>
             <img src="images/rmnp1.jpg" alt="View from Forest Canyon Overlook along Trail Ridge Road showing alpine peaks and valleys." loading="lazy" decoding="async" />
@@ -131,7 +79,7 @@ footer {
         <!-- HISTORY -->
         <section id="history" aria-labelledby="hist">
           <h2 id="hist">History</h2>
-          <p>Paleo‑Indians traveled routes near present‑day Trail Ridge Road, followed by the <strong>Ute</strong> and <strong>Arapaho</strong> peoples who hunted and camped in the region. In <time datetime="1820">1820</time> the <strong>Long Expedition</strong> approached via the Platte River; <strong>Longs Peak</strong> bears Stephen H. Long’s name. By <time datetime="1878">1878</time> settler encroachment had displaced Native Americans.</p>
+          <p>Paleo-Indians traveled routes near present-day Trail Ridge Road, followed by the <strong>Ute</strong> and <strong>Arapaho</strong> peoples who hunted and camped in the region. In <time datetime="1820">1820</time> the <strong>Long Expedition</strong> approached via the Platte River; <strong>Longs Peak</strong> bears Stephen H. Long’s name. By <time datetime="1878">1878</time> settler encroachment had displaced Native Americans.</p>
           <p>Mining settlements such as <strong>Lulu City</strong>, <strong>Dutchtown</strong>, and <strong>Gaskill</strong> sprang up in the <strong>Never Summer Mountains</strong> in the 1870s but were abandoned by <time datetime="1883">1883</time>. The railroad reached <strong>Lyons</strong> in <time datetime="1881">1881</time>; the <strong>Big Thompson Canyon Road</strong> (now U.S. 34) opened in <time datetime="1904">1904</time>. Road building culminated with <strong>Trail Ridge Road</strong> to Fall River Pass (<time datetime="1929">1929</time>–<time datetime="1932">1932</time>) and on to Grand Lake by <time datetime="1938">1938</time>. Advocates including <strong>Enos Mills</strong>, <strong>James Grafton Rogers</strong>, and <strong>J. Horace McFarland</strong> led to the park’s establishment on <time datetime="1915-01-26">January 26, 1915</time>.</p>
         </section>
 
@@ -142,7 +90,8 @@ footer {
           <p>The park contains roughly <strong>450 miles</strong> of rivers/streams, <strong>350 miles</strong> of trails, and about <strong>150 lakes</strong>. Elevations range from <strong>7,860 ft</strong> to <strong>14,259 ft</strong> (Longs Peak). Over sixty peaks exceed 12,000 ft; the <strong>Mummy Range</strong> includes several thirteeners. Small glaciers and permanent snowfields persist in cirques.</p>
 
           <figure>
-            <img src="images/rmnp2.JPG" alt="View from Many Parks Curve showing meadows and mountain ranges." loading="lazy" decoding="async" />
+            <!-- Fixed case to .jpg so it works on GitHub Pages -->
+            <img src="images/rmnp2.jpg" alt="View from Many Parks Curve showing meadows and mountain ranges." loading="lazy" decoding="async" />
             <figcaption>Many Parks Curve on Trail Ridge Road.</figcaption>
           </figure>
         </section>
@@ -150,14 +99,14 @@ footer {
         <!-- CLIMATE -->
         <section id="climate" aria-labelledby="clim">
           <h2 id="clim">Climate</h2>
-          <p>According to Köppen, RMNP has a <strong>subarctic (Dfc)</strong> climate with cool summers and year‑round precipitation, shaped by elevation, slope, exposure, and colliding air masses. High elevations receive roughly twice the precipitation of lower zones, largely as snow. Summers at lower elevations are typically in the <strong>70–80 °F</strong> daytime range with cool nights; sudden <strong>afternoon thunderstorms</strong> are common. The <strong>Continental Divide</strong> creates different patterns east (drier, windier) and west (snowier, calmer) of the crest.</p>
-          <p>Long‑term observations indicate rising average temperatures since the early 20th century, earlier snowmelt, drier summers, and longer fire seasons. Warmer winters have aided <strong>mountain pine beetle</strong> survival, increasing tree mortality.</p>
+          <p>According to Köppen, RMNP has a <strong>subarctic (Dfc)</strong> climate with cool summers and year-round precipitation, shaped by elevation, slope, exposure, and colliding air masses. High elevations receive roughly twice the precipitation of lower zones, largely as snow. Summers at lower elevations are typically in the <strong>70–80 °F</strong> daytime range with cool nights; sudden <strong>afternoon thunderstorms</strong> are common. The <strong>Continental Divide</strong> creates different patterns east (drier, windier) and west (snowier, calmer) of the crest.</p>
+          <p>Long-term observations indicate rising average temperatures since the early 20th century, earlier snowmelt, drier summers, and longer fire seasons. Warmer winters have aided <strong>mountain pine beetle</strong> survival, increasing tree mortality.</p>
         </section>
 
         <!-- ECOLOGY -->
         <section id="ecology" aria-labelledby="eco">
           <h2 id="eco">Ecology & Ecosystems</h2>
-          <p>The park spans multiple vegetation types: <em>alpine tundra & barren</em>, <em>western spruce/fir</em>, and <em>pine/Douglas‑fir</em>. The Divide and glacial topography create distinct ecological zones.</p>
+          <p>The park spans multiple vegetation types: <em>alpine tundra & barren</em>, <em>western spruce/fir</em>, and <em>pine/Douglas-fir</em>. The Divide and glacial topography create distinct ecological zones.</p>
 
           <div class="toc" role="navigation" aria-label="On this page">
             <strong>Subsections</strong>
@@ -171,12 +120,12 @@ footer {
 
           <section id="montane">
             <h3>Montane zone</h3>
-            <p>Between roughly <strong>5,600–9,500 ft</strong>, the montane hosts forests, grasslands, and shrublands with meandering rivers and wildflower meadows. South‑facing slopes favor <strong>ponderosa pine</strong>, while north‑facing slopes support denser <strong>Douglas‑fir</strong>, <strong>lodgepole pine</strong>, and spruce. <strong>Quaking aspen</strong> and riparian trees (willow, alder, water birch) line streams. Valleys include <strong>Moraine Park</strong>, <strong>Horseshoe Park</strong>, <strong>Kawuneeche Valley</strong>, and <strong>Upper Beaver Meadows</strong>.</p>
+            <p>Between roughly <strong>5,600–9,500 ft</strong>, the montane hosts forests, grasslands, and shrublands with meandering rivers and wildflower meadows. South-facing slopes favor <strong>ponderosa pine</strong>, while north-facing slopes support denser <strong>Douglas-fir</strong>, <strong>lodgepole pine</strong>, and spruce. <strong>Quaking aspen</strong> and riparian trees (willow, alder, water birch) line streams. Valleys include <strong>Moraine Park</strong>, <strong>Horseshoe Park</strong>, <strong>Kawuneeche Valley</strong>, and <strong>Upper Beaver Meadows</strong>.</p>
           </section>
 
           <section id="subalpine">
             <h3>Subalpine zone</h3>
-            <p>From about <strong>9,000–11,000 ft</strong>, forests shift to <strong>Engelmann spruce</strong> and <strong>fir</strong>. Near tree line, wind‑sculpted <strong>krummholz</strong> forms dense mats. Past burns often host <strong>lodgepole pine</strong> and <strong>huckleberry</strong>. Lakes such as <strong>Sprague</strong> and <strong>Odessa</strong> dot the landscape.</p>
+            <p>From about <strong>9,000–11,000 ft</strong>, forests shift to <strong>Engelmann spruce</strong> and <strong>fir</strong>. Near tree line, wind-sculpted <strong>krummholz</strong> forms dense mats. Past burns often host <strong>lodgepole pine</strong> and <strong>huckleberry</strong>. Lakes such as <strong>Sprague</strong> and <strong>Odessa</strong> dot the landscape.</p>
           </section>
 
           <section id="alpine">
@@ -208,15 +157,15 @@ footer {
         <!-- ACCESS & ACTIVITIES -->
         <section id="access" aria-labelledby="acc">
           <h2 id="acc">Access & Activities</h2>
-          <p>There are <strong>four entrances</strong> (three near Estes Park, one near Grand Lake) and <strong>five visitor centers</strong>. To manage crowding, a <strong>timed‑entry reservation</strong> system operates seasonally (typically <time>May–October</time>).</p>
+          <p>There are <strong>four entrances</strong> (three near Estes Park, one near Grand Lake) and <strong>five visitor centers</strong>. To manage crowding, a <strong>timed-entry reservation</strong> system operates seasonally (typically <time>May–October</time>).</p>
           <p><strong>Trail Ridge Road (U.S. 34)</strong> connects east and west; its summit is <strong>12,183 ft</strong>, making it the highest continuously paved U.S. highway. Large sections close in winter due to snow.</p>
-          <p>Popular activities include <strong>hiking</strong> (extensive summer trail network), <strong>fishing</strong> (rainbow, brook, cutthroat, brown trout), <strong>climbing & mountaineering</strong>, <strong>snowshoeing</strong>, and <strong>cross‑country skiing</strong>.</p>
+          <p>Popular activities include <strong>hiking</strong> (extensive summer trail network), <strong>fishing</strong> (rainbow, brook, cutthroat, brown trout), <strong>climbing & mountaineering</strong>, <strong>snowshoeing</strong>, and <strong>cross-country skiing</strong>.</p>
         </section>
 
         <!-- WILDFIRES -->
         <section id="wildfires" aria-labelledby="fires">
           <h2 id="fires">Wildfires</h2>
-          <p>Historic and recent fires include the <strong>Bear Lake Fire (1900)</strong>, <strong>Ouzel Fire (1978)</strong>, and <strong>Fern Lake Fire (2012)</strong>. Warming trends, earlier snowmelt, and drought contribute to longer, more intense fire seasons. High‑severity burns degrade soils, increase erosion and flood risk, and pollute air and water; by contrast, low‑severity fires can reduce fuel loads, recycle nutrients, and support ecosystem renewal. RMNP employs <strong>prescribed burns</strong> and <strong>fuel management</strong> to balance ecological benefits and risk.</p>
+          <p>Historic and recent fires include the <strong>Bear Lake Fire (1900)</strong>, <strong>Ouzel Fire (1978)</strong>, and <strong>Fern Lake Fire (2012)</strong>. Warming trends, earlier snowmelt, and drought contribute to longer, more intense fire seasons. High-severity burns degrade soils, increase erosion and flood risk, and pollute air and water; by contrast, low-severity fires can reduce fuel loads, recycle nutrients, and support ecosystem renewal. RMNP employs <strong>prescribed burns</strong> and <strong>fuel management</strong> to balance ecological benefits and risk.</p>
         </section>
 
         <!-- CREDITS / ATTRIBUTION -->
@@ -227,7 +176,6 @@ footer {
           </ul>
         </section>
       </article>
-
 
     </div>
   </main>
