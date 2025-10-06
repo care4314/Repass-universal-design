@@ -1,6 +1,17 @@
-.sr-only{
-    border:0;
-    clip: rect(0,0,0,0);
+:root {
+    --bg: #ffffff;
+    --fg: #1b1b1b;
+    --muted: #555555;
+    --accent: #005f73;
+    --accent-hover: #0a9396;
+    --nav-border: #d7dde2;
+    --maxw: 100ch;
+  }
+  
+ 
+  .sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
     height: 1px;
     margin: -1px;
     overflow: hidden;
@@ -8,4 +19,7 @@
     position: absolute;
     white-space: nowrap;
     width: 1px;
-}
+  }
+  
+  
+  
