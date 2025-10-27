@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RMNP — Structure, Accessible Table & Form</title>
+
+  <!-- Google Fonts: serif for headings, sans for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Merriweather:wght@700&amp;display=swap" rel="stylesheet">
+  <!-- Google Material Symbols (icons hidden from screen readers) -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#fff; --fg:#1b1b1b; --muted:#555;
+      --link:#005f73; --link-hover:#0a9396; --line:#dcdcdc;
+      --maxw:100ch;
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0; color:var(--fg); background:var(--bg); font:400 1rem/1.65 "Inter", system-ui, sans-serif}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:1rem}
+    h1,h2,h3{font-family:"Merriweather", Georgia, serif; line-height:1.25; margin:1rem 0}
+    a{color:var(--link)} a:hover, a:focus{color:var(--link-hover)}
+
+    /* Skip nav (now a neutral container so Outliner won’t list it) */
+    .skip-nav{
+      position:absolute; top:0; left:0; right:0; transform:translateY(-120%);
+      background:#fff; border-bottom:1px solid var(--line); transition:transform .15s ease-in-out;
+    }
+    .skip-nav:focus-within{transform:translateY(0)}
+    .skip-nav ul{margin:0; padding:.5rem 1rem; display:flex; gap:1rem; list-style:none; justify-content:center}
+    .skip-nav a{text-decoration:none; border-bottom:2px solid transparent; padding-bottom:.1rem}
+    .skip-nav a:hover,.skip-nav a:focus{border-color:var(--link-hover)}
+
+    header{border-bottom:1px solid var(--line); background:#f6f8f9}
+
+    /* Primary navigation (update selectors to match the new aria-label text) */
+    nav[aria-label="Primary navigation"]{border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:#fff}
+    nav[aria-label="Primary navigation"] h2{
+      border:0; clip:rect(0 0 0 0); height:1px; margin:-1px; overflow:hidden; padding:0; position:absolute; white-space:nowrap; width:1px;
+    }
+    nav[aria-label="Primary navigation"] ul{max-width:var(--maxw); margin:0 auto; padding:.75rem 1rem; list-style:none; display:flex; flex-wrap:wrap; gap:.75rem 1rem}
+    nav[aria-label="Primary navigation"] a{text-decoration:none; border-bottom:2px solid transparent; padding-bottom:.15rem}
+    nav[aria-label="Primary navigation"] a:hover,
+    nav[aria-label="Primary navigation"] a:focus{border-color:var(--link-hover)}
+
+    main .wrap{padding-top:1rem}
+    figure{margin:1rem 0}
+    img{max-width:100%; height:auto; display:block}
+    figcaption{font-size:.95rem; color:var(--muted); text-align:center}
+
+    /* Accessible data table */
+    table{width:100%; border-collapse:collapse; margin:1rem 0}
+    caption{font-weight:600; text-align:left; margin-bottom:.5rem}
+    thead th{border-bottom:2px solid var(--fg)}
+    th, td{padding:.5rem .6rem; text-align:left; border-bottom:1px solid var(--line)}
+    th[scope="row"]{font-weight:600}
+
+    /* Accessible form */
+    form{display:grid; gap:1rem}
+    fieldset{border:1px solid var(--line); border-radius:.5rem; padding:1rem}
+    legend{font-weight:600}
+    label{display:block; font-weight:600; margin-bottom:.25rem}
+    .hint{color:var(--muted); font-size:.95rem}
+    input[type="text"], input[type="email"], input[type="date"], select, textarea{
+      width:100%; padding:.6rem .7rem; border:1px solid var(--line); border-radius:.5rem; font:inherit
+    }
+    textarea{min-height:8rem}
+    .inline{display:flex; align-items:center; gap:.5rem}
+    button{font:600 1rem/1 "Inter", sans-serif; background:var(--link); color:#fff; border:0; border-radius:.5rem; padding:.6rem 1rem; cursor:pointer}
+    button:hover,button:focus{background:var(--link-hover)}
+    .material-symbols-outlined{vertical-align:-.2em}
+
+    footer{border-top:1px solid var(--line); background:#fafafa}
+    footer p{margin:.5rem 0}
+
+    /* Provided sr-only utility (clip method) */
+    .sr-only{
+      border:0; clip:rect(0,0,0,0); height:1px; margin:-1px; overflow:hidden; padding:0; position:absolute; white-space:nowrap; width:1px;
+    }
+    a:focus-visible{outline:3px solid var(--link-hover); outline-offset:2px}
+  </style>
+</head>
+<body>
+  <!-- Skip Navigation (neutral container so it’s not in the outline) -->
+  <div class="skip-nav" role="navigation" aria-label="Skip navigation">
+    <ul>
+      <li><a href="#main">Skip to main</a></li>
+      <li><a href="#visitation">Skip to table</a></li>
+      <li><a href="#feedback">Skip to form</a></li>
+    </ul>
+  </div>
+
+  <header role="banner">
+    <div class="wrap">
+      <h1>
+        <span class="material-symbols-outlined" aria-hidden="true">terrain</span>
+        Rocky Mountain National Park
+      </h1>
+      <p class="sr-only" id="site-desc">Semantic structure with lifted content, an accessible data table, and an accessible form.</p>
+    </div>
+  </header>
+
+  <!-- Primary navigation with anchors (explicitly titled for the Outliner) -->
+  <nav aria-label="Primary navigation">
+    <h2 class="sr-only">Primary navigation</h2>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#visitation">Visitation</a></li>
+      <li><a href="#feedback">Feedback Form</a></li>
+      <li><a href="#credits">Attribution</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <div class="wrap">
+
+      <article aria-labelledby="overview-heading">
+        <h2 id="overview-heading">
+          <span class="material-symbols-outlined" aria-hidden="true">summarize</span>
+          Overview
+        </h2>
+        <p><strong>Rocky Mountain National Park (RMNP)</strong> is a United States national park in north-central Colorado, about 55 miles (89 km) northwest of Denver, situated between <strong>Estes Park</strong> (east) and <strong>Grand Lake</strong> (west). The <strong>Continental Divide</strong> runs through the park; headwaters of the <strong>Colorado River</strong> arise in the park’s northwest. Landscapes range from forest to alpine tundra, with mountains, lakes, and diverse wildlife.</p>
+
+        <figure>
+          <img src="images/rmnp1.jpg" alt="Forest Canyon Overlook on Trail Ridge Road with alpine peaks and deep valley.">
+          <figcaption>Forest Canyon Overlook on Trail Ridge Road.</figcaption>
+        </figure>
+      </article>
+
+      <section id="visitation" aria-labelledby="visitation-heading">
+        <h2 id="visitation-heading">
+          <span class="material-symbols-outlined" aria-hidden="true">table</span>
+          Visitation (Selected Years)
+        </h2>
+        <p id="visitation-desc" class="hint">Counts of recreational visits from the National Park Service (selected years).</p>
+
+        <table aria-describedby="visitation-desc">
+          <caption>Rocky Mountain National Park recreational visits</caption>
+          <thead>
+            <tr>
+              <th scope="col">Year</th>
+              <th scope="col">Visits</th>
+              <th scope="col">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">2012</th>
+              <td>3,229,617</td>
+              <td>Baseline for growth</td>
+            </tr>
+            <tr>
+              <th scope="row">2019</th>
+              <td>4,678,804</td>
+              <td>Record year</td>
+            </tr>
+            <tr>
+              <th scope="row">2023</th>
+              <td>≈4,100,000</td>
+              <td>Post-pandemic stabilization</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Change (2012→2019)</th>
+              <td colspan="2">+1,449,187 (~44% increase)</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <section id="feedback" aria-labelledby="feedback-heading">
+        <h2 id="feedback-heading">
+          <span class="material-symbols-outlined" aria-hidden="true">rate_review</span>
+          Visitor Feedback Form
+        </h2>
+        <p class="hint" id="form-hint">Fields marked with <span aria-hidden="true">*</span> are required.</p>
+
+        <form action="#" method="post" aria-describedby="form-hint">
+          <div>
+            <label for="name">Full name <span aria-hidden="true">*</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+
+          <div>
+            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+
+          <div>
+            <label for="visit-date">Date of most recent visit</label>
+            <input id="visit-date" name="visit-date" type="date">
+          </div>
+
+          <fieldset>
+            <legend>Activities you enjoyed</legend>
+            <label class="inline"><input type="checkbox" name="activities" value="hiking"> Hiking</label>
+            <label class="inline"><input type="checkbox" name="activities" value="wildlife"> Wildlife viewing</label>
+            <label class="inline"><input type="checkbox" name="activities" value="scenic"> Scenic drives</label>
+            <label class="inline"><input type="checkbox" name="activities" value="winter"> Winter sports</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Overall experience <span aria-hidden="true">*</span></legend>
+            <label class="inline"><input type="radio" name="rating" value="5" required> Excellent</label>
+            <label class="inline"><input type="radio" name="rating" value="4"> Good</label>
+            <label class="inline"><input type="radio" name="rating" value="3"> Fair</label>
+            <label class="inline"><input type="radio" name="rating" value="2"> Poor</label>
+            <label class="inline"><input type="radio" name="rating" value="1"> Very poor</label>
+          </fieldset>
+
+          <div>
+            <label for="comments">Comments</label>
+            <textarea id="comments" name="comments" placeholder="Share highlights or suggestions…"></textarea>
+          </div>
+
+
+          <div class="inline" style="gap:.75rem">
+            <button type="submit"><span class="material-symbols-outlined" aria-hidden="true">send</span> Submit</button>
+            <button type="reset"><span class="material-symbols-outlined" aria-hidden="true">restart_alt</span> Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="credits" aria-labelledby="credits-heading">
+        <h2 id="credits-heading">
+          <span class="material-symbols-outlined" aria-hidden="true">info</span>
+          Attribution
+        </h2>
+      </section>
+
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap">
+      <p class="sr-only">End of page content.</p>
+    </div>
+  </footer>
+</body>
+</html>
