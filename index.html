@@ -1,39 +1,99 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Carli Repass — Class Portal</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carli Repass — Class Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Merriweather:wght@700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/portal.css">
 </head>
 <body>
-<header>
-<h1>Carli Repass — Class Portal</h1>
-</header>
+  <div class="skip-nav" role="navigation" aria-label="Skip navigation">
+    <ul>
+      <li><a href="#main">Skip to main</a></li>
+      <li><a href="#about">Skip to About Me</a></li>
+      <li><a href="#assignments">Skip to Assignments</a></li>
+    </ul>
+  </div>
 
+  <header role="banner" class="site-header">
+    <div class="wrap">
+      <h1>Carli Repass — Class Portal</h1>
+    </div>
+  </header>
 
-<main>
-<section aria-labelledby="about-heading">
-<h2 id="about-heading">About Me</h2>
-<p>
-My name is Carli Repass. This is my class portal for CSCI 3150.
-Some things about me are... 
-I am a senior.
-I love to snowboard, hike, dance, and cook.
-I have a cat at my apartment in Boulder and his name is Tito. 
-I am originally from Texas.
+  
+  <nav aria-label="Primary navigation" class="site-nav">
+    <h2 class="sr-only">Primary navigation</h2>
+    <div class="wrap">
+      <ul class="nav-list">
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#assignments">Assignments</a></li>
+      </ul>
+    </div>
+  </nav>
 
-</p>
-</section>
+  <main id="main">
+    <div class="wrap">
+      <article id="about" aria-labelledby="about-heading" class="about card">
+        <h2 id="about-heading">About Me</h2>
 
+        <div class="about-grid">
+          <figure class="avatar">
+            <img src="portal.jpg" width="480" height="480">
+            <figcaption class="sr-only">Carli Repass</figcaption>
+          </figure>
 
-<nav aria-labelledby="nav-heading">
-<h2 id="nav-heading">Assignments</h2>
-<ul>
-<li><a href="rmnp.html">Assignment 1 Part 1 and 2 — Rocky Mountain National Park</a></li>
-<li><a href="accessibility-demo.html">Assignment 2 - Tables, Forms, Tabbed Browsing, and Screen Reading</a></li>
-<li><a href="assignments/3/index.html">Assignment 3 (placeholder)</a></li>
-</ul>
-</nav>
-</main>
+          <div class="about-text">
+            <p>Hi! I’m Carli Repass, a senior at CU Boulder. I’m building this portal as a hub for my coursework and labs.
+            <p>Outside of class I like to snowboard, hike, dance, and cook. I’m originally from Texas, and I live in Boulder with my cat, Tito.</p>
+          </div>
+        </div>
+      </article>
+
+      <section id="assignments" aria-labelledby="assignments-heading" class="assignments">
+        <h2 id="assignments-heading">Assignments & Labs</h2>
+        <div class="cards">
+          <article class="card" aria-labelledby="lab2-title">
+            <h3 id="lab2-title">Coding & Posting a Web Page</h3>
+            <p>Basic semantic structure, hosted on GitHub Pages. Includes headings, paragraphs, links, and images with proper alt text.</p>
+            <p><a class="btn" href="index.html">Open</a></p>
+          </article>
+
+          <article class="card" aria-labelledby="lab3-title">
+            <h3 id="lab3-title">Lab #3 — Tables, Forms, Tabbed Browsing, Screen Reading</h3>
+            <p>Accessible data table and form with labels, fieldsets/legends, captions, headers/scopes, and keyboard navigation checks.</p>
+            
+            <p><a class="btn" href="accessibility-demo.html">Open</a></p>
+          </article>
+
+          <article class="card" aria-labelledby="lab4-title">
+            <h3 id="lab4-title">Lab #4 — Accessible CSS Layout</h3>
+            <p>Responsive layout with flexbox and grid, skip navigation, readable line lengths, contrast-tested colors, and focus styles.</p>
+            <p><a class="btn" href="index.html">Open</a></p>
+          </article>
+          <article class="card" aria-labelledby="rmnp-title">
+            <h3 id="rmnp-title">RMNP — Semantic HTML5 Recode</h3>
+            <p>Rebuilt from a Wikipedia article with semantic structure, local images, anchors, and accessibility checks.</p>
+            <p><a class="btn" href="rmnp.html">Open RMNP Page</a></p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer role="contentinfo" class="site-footer">
+    <div class="wrap">
+      <p>© <span id="year"></span> Carli Repass · Class Portal</p>
+    </div>
+  </footer>
+
+  <script>
+   
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
