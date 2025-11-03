@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accessible CSS Grid & Flex Layout</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Merriweather:wght@700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/accessible.css">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <h1>Accessible CSS Grid & Flex Layout</h1>
+    <p class="tagline">CSS Grid for layout, Flexbox for nav, accessibility and responsiveness.</p>
+  </header>
+
+  <nav class="site-nav" aria-label="Primary navigation">
+    <h2 class="sr-only">Primary navigation</h2>
+    <ul class="nav-list">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#design">Design</a></li>
+      <li><a href="#accessibility">Accessibility</a></li>
+    </ul>
+  </nav>
+
+  <main id="overview" class="site-main">
+    <article aria-labelledby="main-title">
+      <h2 id="main-title">Overview</h2>
+      <p>This page demonstrates an accessible multicolumn layout built with CSS Grid and Flexbox. Grid handles the two-dimensional structure—header, nav, main, asides, and footer—while Flexbox arranges the one-dimensional navigation bar.</p>
+
+      <h3 id="design">Responsive Design</h3>
+      <p>Media queries reflow the layout for tablets and mobile devices. On small screens, the nav switches to a vertical list with large, thumb-friendly targets.</p>
+
+      <h3 id="accessibility">Accessibility Features</h3>
+      <ul>
+        <li>Color-blind-safe, high-contrast palette.</li>
+        <li>Semantic HTML5 regions (header, nav, main, aside, footer).</li>
+        <li>Visible focus outlines for keyboard users.</li>
+        <li>Readable line length and font pairing from Google Fonts.</li>
+      </ul>
+
+      </article>
+  </main>
+
+  <aside class="aside-left" aria-labelledby="aside-left-heading">
+    <h2 id="aside-left-heading">Aside A — Grid</h2>
+    <p>CSS Grid defines both rows and columns, making it ideal for full page layout that needs structure in two dimensions.</p>
+  </aside>
+
+  <aside class="aside-right" aria-labelledby="aside-right-heading">
+    <h2 id="aside-right-heading">Aside B — Flexbox</h2>
+    <p>Flexbox arranges items along a single axis. Here it’s used for the navigation links so they stay evenly spaced and wrap gracefully.</p>
+  </aside>
+
+  
+
+  <!-- Screen-reader-only utility -->
+  <style>
+    .sr-only {
+      border: 0;
+      clip: rect(0,0,0,0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+  </style>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
