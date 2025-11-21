@@ -1,0 +1,114 @@
+/* =========================================
+   Universal Design Theme — Pastel Palette
+   Carli Repass
+   ========================================= */
+
+/* Fonts */
+:root {
+    --font-body: "Inter", system-ui, sans-serif;
+    --font-heading: "Merriweather", serif;
+  
+    /* Pastel palette (all WCAG contrast-tested on white) */
+    --color-bg: #ffffff;
+    --color-text: #1a1a1a;
+  
+    --color-pink: #ffd7e4;
+    --color-lavender: #e7ddff;
+    --color-blue: #d8ecff;
+    --color-mint: #dff7ed;
+    --color-yellow: #fff5d6;
+  
+    /* Higher-contrast accent */
+    --color-accent: #4a4a9c;  /* deep lavender/navy hybrid */
+  
+    --radius: 12px;
+    --spacing: 1rem;
+    --max-width: 70rem;
+  }
+  
+  /* Global Reset */
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    font-family: var(--font-body);
+    padding: 0;
+  }
+  
+  /* Link defaults */
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+  
+  /* Headings */
+  h1, h2, h3 {
+    font-family: var(--font-heading);
+    margin-top: 0;
+    line-height: 1.25;
+  }
+  
+  /* Buttons */
+  .cta-btn {
+    display: inline-block;
+    background: var(--color-accent);
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .cta-btn:hover,
+  .cta-btn:focus {
+    opacity: 0.9;
+  }
+  
+
+  .learn-card {
+    background: var(--color-blue);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  }
+  
+  .learn-card:nth-child(2) {
+    background: var(--color-lavender);
+  }
+  
+  .learn-card:nth-child(3) {
+    background: var(--color-mint);
+  }
+  
+  .card-link {
+    margin-top: 1rem;
+    display: inline-block;
+    font-weight: 600;
+  }
+  
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--color-accent);
+    color: white;
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+    border-radius: 0 0 var(--radius) var(--radius);
+  }
+  
+  .skip-link:focus {
+    top: 0;
+  }
+  
