@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Why Universal Design — Carli Repass</title>
+  <title>Why Universal Design Matters — Carli Repass</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Merriweather:wght@700&amp;display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/ud-theme.css">
   <link rel="stylesheet" href="css/ud-layout.css">
@@ -22,6 +22,7 @@
   </header>
 
   <nav class="primary-nav" aria-label="Main navigation">
+    <h2 class="sr-only">Main navigation</h2>
     <ul>
       <li><a href="home.html">Home</a></li>
       <li><a href="why.html" aria-current="page">Why</a></li>
@@ -34,10 +35,94 @@
     <section class="hero">
       <h2 class="hero-title">Why Universal Design Matters</h2>
       <p class="hero-text">
-        Universal Design ensures that the web works for everyone.
+        Universal Design is not just a nice extra. It is a commitment to making
+        the web usable for everyone, across abilities, devices, and environments.
       </p>
     </section>
+
+    <section class="content" aria-labelledby="why-content-heading">
+      <h2 id="why-content-heading" class="sr-only">
+        Reasons Universal Design is important
+      </h2>
+    
+      <article class="content-section">
+        <h3>The internet is infrastructure now</h3>
+        <p>
+          We rely on websites to apply for jobs, attend classes, schedule
+          appointments, and stay connected. When a site is not accessible, it
+          can keep people out of the same opportunities that others
+          receive by default.
+        </p>
+      </article>
+
+      <article class="content-section">
+        <h3>Disability is normal, not rare</h3>
+        <p>
+          Disability is part of the human experience. Some disabilities are
+          permanent, some are temporary, and some are situational:
+        </p>
+        <ul>
+          <li>Permanent examples: Blindness, low vision, deafness, limited mobility.</li>
+          <li>Temporary examples: A broken arm, a concussion, eye surgery.</li>
+          <li>Situational examples: Bright sunlight on a phone screen, holding a baby,
+              trying to read on a noisy bus, or dealing with ADHD brain fog.</li>
+        </ul>
+        <p>
+          When we design only for people with no current disabilities, we leave out a
+          huge portion of real life.
+        </p>
+      </article>
+
+      <article class="content-section">
+        <h3>Accessibility improves usability for everyone</h3>
+        <p>
+          Design choices like clear headings, good color contrast, large tap
+          targets, and readable language are essential for many people with
+          disabilities. They also help tired students on their phones at
+          midnight and power users navigating quickly with a keyboard. Universal
+          Design makes the experience smoother for everyone, not just those who have disabilities.
+        </p>
+      </article>
+
+      <article class="content-section">
+        <h3>Legal and professional reality</h3>
+        <p>
+          In many places, digital accessibility is considered a civil right.
+          Organizations are expected to meet standards like the Web Content
+          Accessibility Guidelines (WCAG), and lawsuits around inaccessible
+          websites are becoming more common. For developers and designers,
+          accessibility is part of being a professional, not an optional bonus.
+        </p>
+      </article>
+
+      <article class="content-section">
+        <h3>Accessible does not mean boring</h3>
+        <p>
+          There is a myth that accessible sites are plain or “locked down.” In
+          practice, accessible design tends to be cleaner, more consistent, and
+          easier to understand. Strong contrast, clear hierarchy, and thoughtful
+          motion can still feel modern and “hip” while remaining usable for a
+          wide range of people.
+        </p>
+      </article>
+
+      <article class="content-section">
+        <h3>Every design choice includes or excludes someone</h3>
+        <p>
+          Each decision we make as designers and developers either opens the
+          door wider or makes it harder for someone to participate. Not
+          designing for Universal Design is <strong>choosing</strong> who will
+          struggle or be left out. Designing with Universal Design is a way to
+          say: “Everyone belong here, and this experience was built with all in
+          mind.”
+        </p>
+      </article>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Carli Repass — Universal Design Project</p>
+  </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();

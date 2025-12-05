@@ -1,30 +1,34 @@
-/* =========================================
-   Universal Design Theme — Pastel Palette
-   Carli Repass
-   ========================================= */
+/* Visually hidden but accessible text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
-/* Fonts */
+
 :root {
-    --font-body: "Inter", system-ui, sans-serif;
-    --font-heading: "Merriweather", serif;
-  
-    /* Pastel palette (all WCAG contrast-tested on white) */
-    --color-bg: #ffffff;
-    --color-text: #1a1a1a;
-  
-    --color-pink: #ffd7e4;
-    --color-lavender: #e7ddff;
-    --color-blue: #d8ecff;
-    --color-mint: #dff7ed;
-    --color-yellow: #fff5d6;
-  
-    /* Higher-contrast accent */
-    --color-accent: #4a4a9c;  /* deep lavender/navy hybrid */
-  
-    --radius: 12px;
-    --spacing: 1rem;
-    --max-width: 70rem;
-  }
+  /* existing stuff... */
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-heading: "Merriweather", serif;
+
+  /* Your chosen UD colors */
+  --color-header-bg: #aebed5;   /* soft blue */
+  --color-nav-bg: #d3d3d3;      /* light gray */
+  --color-footer-bg: #f5f5f5;   /* light neutral */
+  --color-text: #111111;
+  --color-accent: #000000;      /* active tab background */
+  --color-accent-contrast: #ffffff;
+
+  --max-width: 70rem;
+  --radius: 12px;
+}
+
   
   /* Global Reset */
   * {

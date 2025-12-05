@@ -1,81 +1,161 @@
+.site-header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--color-header-bg);
+  color: var(--color-text);
+}
 
+.tagline {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
 
-   .site-header {
-    text-align: center;
-    padding: 2rem 1rem;
-    background: var(--color-pink);
-  }
-  
-  .tagline {
-    margin-top: 0.5rem;
-    font-size: 1.1rem;
-  }
-  
-  .primary-nav {
-    background: var(--color-lavender);
-    padding: 0.5rem 1rem;
-  }
-  
-  .primary-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-    padding: 0;
-    margin: 0;
-    justify-content: center;
-  }
-  
-  .primary-nav a {
-    padding: 0.5rem 0.75rem;
-    border-radius: var(--radius);
-    font-weight: 600;
-  }
-  
-  .primary-nav a[aria-current="page"] {
-    background: var(--color-accent);
-    color: white;
-  }
-  
-  
-  .hero {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-  
-  .hero-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  
-  .learn-section {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 2rem 1rem 4rem;
-  }
-  
-  .learn-section h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
+.primary-nav {
+  background: var(--color-nav-bg);
+  padding: 0.5rem 1rem;
+}
+
+.primary-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.primary-nav a {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.primary-nav a[aria-current="page"] {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+/* Hero */
+.hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* You can delete these if you aren’t using learn sections yet */
+.learn-section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.learn-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.learn-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 50rem) {
   .learn-grid {
-    display: grid;
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  @media (min-width: 50rem) {
-    .learn-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: var(--color-footer-bg);
+  margin-top: 2rem;
+}
+
+/* Content sections for Why / What / How */
+.content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+.content-section {
+  margin-bottom: 2rem;
+}
+
+.content-section h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.content-section p {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.content-section ul {
+  margin-top: 0;
+  padding-left: 1.25rem;
+}
+
+.content-section li {
+  margin-bottom: 0.35rem;
+}
+
+/* Intro / overview section on home page */
+.content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.intro {
+  text-align: left;
+}
+
+.intro-heading {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.intro-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.intro-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.intro-item p {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.intro-link {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.intro-link:hover,
+.intro-link:focus {
+  text-decoration: underline;
+}
+
+/* make the three columns on larger screens */
+@media (min-width: 50rem) {
+  .intro-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  
-  .site-footer {
-    text-align: center;
-    padding: 1.5rem 1rem;
-    background: var(--color-yellow);
-    margin-top: 2rem;
-  }
-  
+}
+

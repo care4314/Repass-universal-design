@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>What Is Universal Design — Carli Repass</title>
+  <title>What Is Universal Design? — Carli Repass</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Merriweather:wght@700&amp;display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/ud-theme.css">
   <link rel="stylesheet" href="css/ud-layout.css">
@@ -22,6 +22,7 @@
   </header>
 
   <nav class="primary-nav" aria-label="Main navigation">
+    <h2 class="sr-only">Main navigation</h2>
     <ul>
       <li><a href="home.html">Home</a></li>
       <li><a href="why.html">Why</a></li>
@@ -32,13 +33,96 @@
 
   <main id="main">
     <section class="hero">
-      <h2 class="heniversal-ro-title">What Universal Design Is</h2>
+      <h2 class="hero-title">What Is Universal Design?</h2>
       <p class="hero-text">
-        Universal Design is the practice of creating digital experiences that can be used by the widest range of people without needing adaptation.
+        Universal Design is about creating experiences that can be used by the
+        widest range of people, without needing separate “special” versions.
       </p>
+    </section>
+
+    <section class="content" aria-labelledby="why-content-heading">
+      <h2 id="why-content-heading" class="sr-only">
+        Definition and principles of Universal Design
+      </h2>
+      <article class="content-section">
+        <h3>Definition</h3>
+        <p>
+          Universal Design is the design of products and environments to be
+          usable by all people, to the greatest extent possible, without the
+          need for adaptation or specialized design. On the web, this means
+          building sites that work for people with different bodies, senses,
+          devices, languages, and attention spans.
+        </p>
+      </article>
+
+      <article class="content-section">
+        <h3>Universal Design, accessibility, and inclusive design</h3>
+        <p>
+          These ideas overlap, but they are not exactly the same:
+        </p>
+        <ul>
+          <li><strong>Universal Design</strong> aims for one design that works for as many people as possible.</li>
+          <li><strong>Accessibility</strong> focuses on meeting specific requirements so people with disabilities can use a product.</li>
+          <li><strong>Inclusive design</strong> is the process of involving diverse
+              people in design and testing, and learning from their experiences.</li>
+        </ul>
+        <p>
+          This project uses all three: Universal Design as the goal, accessibility
+          standards as the guardrails, and inclusive design as a mindset.
+        </p>
+      </article>
+
+      <article class="content-section">
+        <h3>The 7 principles of Universal Design</h3>
+        <p>Universal Design is often summarized with seven principles:</p>
+        <ul>
+          <li><strong>Equitable use:</strong> the design is useful and marketable to people with diverse abilities.</li>
+          <li><strong>Flexibility in use:</strong> it accommodates a wide range of preferences and abilities.</li>
+          <li><strong>Simple and intuitive:</strong> it is easy to understand, regardless of experience or concentration level.</li>
+          <li><strong>Perceptible information:</strong> it communicates information effectively, regardless of sensory abilities.</li>
+          <li><strong>Tolerance for error:</strong> it minimizes hazards and the negative consequences of mistakes.</li>
+          <li><strong>Low physical effort:</strong> it can be used comfortably, with minimal fatigue.</li>
+          <li><strong>Size and space for approach and use:</strong> it provides appropriate space for approach, reach, and manipulation.</li>
+        </ul>
+      </article>
+
+      <article class="content-section">
+        <h3>WCAG’s POUR principles</h3>
+        <p>
+          On the web, accessibility standards are often summarized as “POUR”:
+        </p>
+        <ul>
+          <li><strong>Perceivable:</strong> users can perceive the content in at least one way (for example, text alternatives for images).</li>
+          <li><strong>Operable:</strong> users can navigate and interact with all controls (keyboard, switch devices, etc.).</li>
+          <li><strong>Understandable:</strong> content and interfaces are clear, predictable, and consistent.</li>
+          <li><strong>Robust:</strong> content works with a wide range of browsers, devices, and assistive technologies.</li>
+        </ul>
+      </article>
+
+      <article class="content-section">
+        <h3>Common barriers on the web</h3>
+        <p>
+          When Universal Design is not considered, users run into the same barriers repeatedly:
+        </p>
+        <ul>
+          <li>Low color contrast that makes text hard to read.</li>
+          <li>Navigation that only works with a mouse and not with a keyboard.</li>
+          <li>Images without alternative text, so screen reader users miss information.</li>
+          <li>Buttons and links that are too small to tap on a phone.</li>
+          <li>Motion and animation that cannot be reduced and can cause distraction or motion sickness.</li>
+          <li>Time-limited tasks that advance before someone can finish.</li>
+        </ul>
+        <p>
+          Universal Design treats these issues as bugs in the design, not as
+          “edge cases” that users should just deal with.
+        </p>
+      </article>
     </section>
   </main>
 
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Carli Repass — Universal Design Project</p>
+  </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();

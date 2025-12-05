@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>How To Build for Universal Design — Carli Repass</title>
+  <title>How to Build for Universal Design — Carli Repass</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Merriweather:wght@700&amp;display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/ud-theme.css">
   <link rel="stylesheet" href="css/ud-layout.css">
@@ -22,6 +22,7 @@
   </header>
 
   <nav class="primary-nav" aria-label="Main navigation">
+    <h2 class="sr-only">Main navigation</h2>
     <ul>
       <li><a href="home.html">Home</a></li>
       <li><a href="why.html">Why</a></li>
@@ -34,10 +35,82 @@
     <section class="hero">
       <h2 class="hero-title">How to Build Universally Designed Websites</h2>
       <p class="hero-text">
-        Through semantic HTML, accessible patterns, color contrast, and device-friendly layouts, developers can make the web truly usable for all.
+        Universal Design becomes real when it shows up in our HTML, CSS, JavaScript,
+        and testing process. These techniques are practical steps you can apply to
+        almost any project.
       </p>
     </section>
+
+    <section class="content" aria-labelledby="how-content-heading">
+      <h2 id="how-content-heading" class="sr-only">
+        Techniques for Universal Design on the web
+      </h2>
+
+      <article class="content-section">
+        <h3>Structure and semantics</h3>
+        <ul>
+          <li>Use HTML5 landmarks: <code>header</code>, <code>nav</code>, <code>main</code>,
+              <code>section</code>, <code>article</code>, and <code>footer</code>.</li>
+          <li>Keep a logical heading order (one <code>h1</code> per page, then <code>h2</code> and <code>h3</code> as needed).</li>
+          <li>Use real buttons and links (<code>&lt;button&gt;</code> and <code>&lt;a&gt;</code>) instead of clickable <code>&lt;div&gt;</code> elements.</li>
+          <li>Label form controls with <code>&lt;label&gt;</code> elements and meaningful text.</li>
+          <li>Use ARIA attributes only when native HTML cannot express the behavior or state.</li>
+        </ul>
+      </article>
+
+      <article class="content-section">
+        <h3>Keyboard and navigation</h3>
+        <ul>
+          <li>Test every page using only the keyboard: Tab, Shift+Tab, Enter, and spacebar.</li>
+          <li>Provide a “Skip to main content” link so keyboard users can bypass repetitive navigation.</li>
+          <li>Ensure that focus styles are clearly visible; never remove outlines without replacing them.</li>
+          <li>Avoid keyboard traps, where focus gets stuck inside a component.</li>
+        </ul>
+      </article>
+
+      <article class="content-section">
+        <h3>Color and contrast</h3>
+        <ul>
+          <li>Use a contrast checker to meet at least WCAG AA (4.5:1 for normal text).</li>
+          <li>Do not rely on color alone to communicate meaning; pair color with icons or text labels.</li>
+          <li>Check text over gradients and images to make sure it is still readable.</li>
+        </ul>
+      </article>
+
+      <article class="content-section">
+        <h3>Text and readability</h3>
+        <ul>
+          <li>Use relative units like <code>rem</code> so users can zoom and keep layouts flexible.</li>
+          <li>Keep line length and spacing comfortable; avoid giant paragraphs that look like a wall of text.</li>
+          <li>Use plain language when possible and explain any required jargon.</li>
+          <li>Avoid long blocks of ALL CAPS, which are harder to read and can be mispronounced by screen readers.</li>
+        </ul>
+      </article>
+
+      <article class="content-section">
+        <h3>Images, media, and motion</h3>
+        <ul>
+          <li>Provide meaningful alternative text for informative images, and use empty <code>alt=""</code> for purely decorative ones.</li>
+          <li>Add captions or transcripts for videos and audio content.</li>
+          <li>Respect the user’s “prefers-reduced-motion” setting and avoid essential information that depends only on animation.</li>
+          <li>Never autoplay audio; let users decide when to play media.</li>
+        </ul>
+      </article>
+
+      <article class="content-section">
+        <h3>Forms and errors</h3>
+        <ul>
+          <li>Group related fields with <code>&lt;fieldset&gt;</code> and <code>&lt;legend&gt;</code> when appropriate.</li>
+          <li>Write error messages that clearly explain what went wrong and how to fix it.</li>
+          <li>Keep touch targets large enough for thumbs—around 44×44 pixels is a good baseline.</li>
+        </ul>
+      </article>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Carli Repass — Universal Design Project</p>
+  </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
